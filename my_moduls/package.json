@@ -1,0 +1,15 @@
+{
+  "name": "testhaohao",
+  "version": "0.0.1",
+  "description": "这是浩浩的测试,千万别下",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test",
+    "浩浩"
+  ],
+  "author": "sherry",
+  "license": "ISC"
+}
