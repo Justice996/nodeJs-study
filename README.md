@@ -75,7 +75,12 @@ user.html  注册登录前台页面
   数据:GET  POST
   中间件:使用,写,链式操作
 
-  GET:无需中间件  
+  GET:无需中间件  req.query
   POST:需要body-parser  
 
   链式操作
+  server.use(function(req,res,next){});  
+  next--下一个步骤  
+
+  cookie和session
+    
