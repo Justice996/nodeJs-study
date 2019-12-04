@@ -82,5 +82,34 @@ user.html  注册登录前台页面
   server.use(function(req,res,next){});  
   next--下一个步骤  
 
-  cookie和session
+  cookie和session  
+  cookie :
+    1. cookie空间非常小---省着用
+    2. 安全性非常差  
+    所以需要注意:
+    1. 需要计算空间
+    2. 校验cookie是否被篡改过
+
+   - 发送cookie
+        res.secret='字符串';
+        res.cookie(名字,值,{path:'/',maxAge:毫秒,signed:true});
+   - 读取cookie
+        cookie-parser  
+            server.use(cookieParser('签名'));
+
+           ```javascript
+            server.use(function(){
+              req.cookies      //未签名版  
+              req.signedCookies    //签名版  
+            })
+            ```
+
+    - 删除cookie
+        res.clearCookie(名字)
+
+  --------
+
+  cookie-session
+     获取   res.session['xxx']  
+     删除   delete res.session['xxx']
     
