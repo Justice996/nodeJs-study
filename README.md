@@ -112,4 +112,9 @@ user.html  注册登录前台页面
   cookie-session
      获取   res.session['xxx']  
      删除   delete res.session['xxx']
+
+  ----
+  模板引擎:
+     1. jade -破坏式 侵入式 强依赖
+     2. ejs - 温和 非侵入式 弱依赖
     
