@@ -23,6 +23,8 @@ user.html  注册登录前台页面
 6. stream 流操作
 7. Timers 定时器
 8. ZLIB 压缩
+9. body-parser 解析post数据
+10. multer 解析post文件
 
 ------------------------------------------
 自定义模块 
@@ -134,4 +136,41 @@ jade:
   jade.renderFile('模板文件名',参数)
 
 -----------------------------------------
+
+express配合模板引擎
+
+1. 使用consolidate
+
+```javascript
+consolidate = require  //引入模块
+server.set('view engin','html')  //输出什么文件
+server.set('views','模板文件目录') 
+server.engine('html',consolidate.ejs) //使用什么模板引擎
+server.get('/',(req,res)=>{
+  res.render('模板文件',数据);
+})
+
+```
+
+-----------------------
+
+router路由:  
+把不同的目录,对应到不同的模块
+
+xxx.com/aaa/  mod1  
+xxx.com/news/  mod_news  
+                 post                 news_post  
+
+//1.创建router
+ var router =express.Router();
+ 
+ //2.把router添加到server
+ server.use('/user',router)
+
+ //3.router内部
+ router.get('/1.html')
+ router.post('/2.html')
+
+
+-------------------
 
