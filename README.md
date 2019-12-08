@@ -169,8 +169,18 @@ xxx.com/news/  mod_news
 
  //3.router内部
  router.get('/1.html')
- router.post('/2.html')
+ router.post('/2.html ')
 
 
 -------------------
 
+nodeJS操作数据库
+  1. 下载mysql模块(client)
+  2. 连接数据库  
+            var db = mysql.createConnection({host,user,password,database});
+  3. 操作数据库
+            db.query(SQL,(err,data)=>{
+
+            })
+4. SQL语句  
+      增删改查
