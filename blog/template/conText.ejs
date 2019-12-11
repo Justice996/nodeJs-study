@@ -67,15 +67,12 @@
     </ul>
 </div>
 <div class="content">
-	<div class="header clear"><h2><img src="<%=article_data.author_src%>" alt=""/></h2><p>智能社</p></div>
+	<div class="header clear"><h2 style="width: 50px;height: 50px;overflow: hidden;border-radius: 50%;"><img src="<%=article_data.author_src%>" alt="" width="100%" /></h2><p><%=article_data.author%></p></div>
     <div class="cont">
     	<h3><%=article_data.title%></h3>
-        <div class="time"><p><%=article_data.title%><span><img src="img/zan.png" alt=""/></span></p></div>
+        <div class="time"><p><%=article_data.sData%><span><img src="img/zan.png" alt=""/></span></p></div>
         <div class="text-box">
-            <p>智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社</p>
-            <p>智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社</p>
-            <p>智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社</p>
-            <p>智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社智能社</p>
+            <%-article_data.content%>
         </div>
     </div>
 </div>
@@ -84,8 +81,8 @@
     	<li class="say"><a href="javascript:;">
         	<i></i><span>0</span>
         </a></li>
-    	<li class="zan"><a href="javascript:;">
-        	<i></i><span>0</span>
+    	<li class="zan"><a href="/article?id=<%=article_data.ID%>&act=like">
+        	<i></i><span><%=article_data.n_like%></span>
         </a></li>
     	<li class="xing"><a href="javascript:;">
         	<i><img src="img/xing.png" alt=""/></i>
