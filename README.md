@@ -9,7 +9,7 @@ nodeJs学习
 sever2.js 简单的注册登录接口实现
 user.html  注册登录前台页面  
 
- ###模块化
+ ### 模块化
   1. 系统模块:http fs等等
   2. 自定义模块
   3. 包管理器  
@@ -47,7 +47,7 @@ user.html  注册登录前台页面
     xx:??
   }
 
-----------------------------------------------------------------------------
+-----------------------------------------
  1. 自己的模块
      * require(用来引入 如果有./,从当前目录查找模块,如果没有./,先从系统模块找,再从node_modules找)
      * module
@@ -55,7 +55,8 @@ user.html  注册登录前台页面
  2. 引入模块
  3. .js可选
 
- ---------------------------------------------------------------------------npm:NodeJS Package Manager(NodeJS包管理器)
+ ------------------------
+ npm:NodeJS Package Manager(NodeJS包管理器)
  1. 统一下载途径
  2. 自动下载依赖
 
@@ -106,7 +107,7 @@ user.html  注册登录前台页面
             })
             ```
 
-    - 删除cookie
+     删除cookie
         res.clearCookie(名字)
 
   --------
@@ -179,8 +180,6 @@ nodeJS操作数据库
   2. 连接数据库  
             var db = mysql.createConnection({host,user,password,database});
   3. 操作数据库
-            db.query(SQL,(err,data)=>{
-
-            })
+            db.query(SQL,(err,data)=>{    })
 4. SQL语句  
       增删改查
