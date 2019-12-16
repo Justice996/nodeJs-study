@@ -1,3 +1,11 @@
+/**
+ * 简单的博客功能的实现
+ *  主要使用nodeJS+express+mysql
+ * 实现轮播图列表
+ * 文章列表
+ * 文章详情页
+ * 简单的点赞功能
+*/
 const express = require("express");
 const static = require("express-static");
 const cookieParser = require("cookie-parser");
