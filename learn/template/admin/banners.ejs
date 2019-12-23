@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后台管理系统-轮播图管理</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .box {
+            display: flex;
+            height: 100vh;
+        }
+
+        .left-wrap {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #000;
+        }
+
+        .left-wrap a {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #333;
+        }
+        .right-wrap{
+            width: 60%;
+            margin:  20px auto;
+        }
+        .m-btn{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <%- include ('components/top.inc.ejs')%>
+        <div class="right-wrap">
+            <h3>轮播图管理</h3>
+            <button type="button" class="btn btn-primary m-btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">新增</button>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">标题</th>
+                    <th scope="col">描述</th>
+                    <th scope="col">链接</th>
+                    <th scope="col">操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% for(let i=0;i<banners.length;i++){%>
+                  <tr>
+                    <th scope="row"><%=banners[i].ID%></th>
+                    <td><%=banners[i].title%></td>
+                    <td><%=banners[i].description%></td>
+                    <td><img src=" <%=banners[i].href%>" alt="轮播图"></td>
+                    <td>
+                        <a class="btn btn-warning" href="?act=mod&id=<%=banners[i].ID %>" style="color: #fff;">修改</a>
+                        <a class="btn btn-danger" href="?act=del&id=<%=banners[i].ID %>" style="color: #fff;" onclick="return confirm('您确定要删除吗？')">删除</a>
+                    </td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">新增轮播图</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="?" method="POST">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">标题:</label>
+                  <input type="text" class="form-control" id="recipient-name" name="title">
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">描述:</label>
+                  <textarea class="form-control" id="message-text" name="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label">链接:</label>
+                    <input type="text" class="form-control" id="recipient-name" name="href">
+                  </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+              <button type="submit" class="btn btn-primary">保存</button>
+            </div>
+        </form>
+          </div>
+        </div>
+      </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js" integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+$('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+//   modal.find('.modal-title').text('New message to ' + recipient)
+//   modal.find('.modal-body input').val(recipient)
+})</script>
+</html>
