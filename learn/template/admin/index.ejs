@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>后台管理系统-首页</title>
+    <style>
+       *{
+           padding: 0;
+           margin: 0;
+       }
+       a{
+           color: #666;
+           text-decoration: none;
+       }
+    .box{
+           display: flex;
+           height: 100vh;
+    }
+    .left-wrap{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid #000;
+    }
+    .left-wrap a{
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid #333;
+    }
+    </style>
 </head>
+
 <body>
-    
+    <div class="box">
+        <%- include ('components/top.inc.ejs')%>
+        <div class="right-wrap">
+             <h3>我是首页</h3>
+        </div>
+    </div>
 </body>
+
 </html>
